@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="23" short-name="book-search-program" url="https://polygon.codeforces.com/p8REOEl/j0dO/book-search-program">
+    <names>
+        <name language="korean" value="도서 검색 프로그램"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/korean/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/.html/korean/problem.html" type="text/html"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>2000</time-limit>
+            <memory-limit>1073741824</memory-limit>
+            <test-count>20</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test description="File &quot;max_size(3, 499).txt&quot;" method="manual"/>
+                <test description="File &quot;max_size(3, 2).txt&quot;" method="manual"/>
+                <test description="File &quot;max_size(3, 10).txt&quot;" method="manual"/>
+                <test description="File &quot;max_size(20, 2).txt&quot;" method="manual"/>
+                <test description="File &quot;max_size(20, 10).txt&quot;" method="manual"/>
+                <test description="File &quot;max_size(20, 499).txt&quot;" method="manual"/>
+                <test description="File &quot;ksoosung77_tl_data2.txt&quot;, linear AND" method="manual"/>
+                <test description="File &quot;ksoosung77_tl_data.txt&quot;, linear AND2" method="manual"/>
+                <test description="File &quot;nis(20, 1).txt&quot;" method="manual"/>
+                <test description="File &quot;nis(20, 10).txt&quot;" method="manual"/>
+                <test description="File &quot;nis(20, 20).txt&quot;" method="manual"/>
+                <test cmd="long-comp -N 200 -M 500 -A 20 -B 1 -K 83" method="generated"/>
+                <test cmd="long-comp-and -N 200 -M 500 -A 20 -B 1 -K 83" method="generated"/>
+                <test cmd="long-comp-and -N 200 -M 500 -A 20 -B 2 -K 71" method="generated"/>
+                <test cmd="long-comp-and -N 200 -M 500 -A 20 -B 10 -K 33" method="generated"/>
+                <test cmd="long-comp-and -N 200 -M 500 -A 20 -B 20 -K 20" method="generated"/>
+                <test cmd="tags -N 200 -M 500 -X 98 -Y 100" method="generated"/>
+                <test cmd="tags-distinct -N 200 -M 500 -X 78 -Y 100" method="generated"/>
+                <test cmd="tags-distinct-or -N 200 -M 500 -X 78 -Y 99" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/book-gen.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/bsp-val.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen.py" type="python.pypy3-64"/>
+            </executable>
+            <executable>
+                <source path="files/long-comp-and.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/long-comp.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/tags-distinct-or.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/tags-distinct.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/tags.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::lcmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/bsp-val.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+                <testset>
+                    <test-count>5</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests>
+                        <test verdict="valid"/>
+                        <test verdict="valid"/>
+                        <test verdict="valid"/>
+                        <test verdict="invalid"/>
+                        <test verdict="invalid"/>
+                    </tests>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="rejected">
+                <source path="solutions/anthropic_claude.py" type="python.pypy3"/>
+            </solution>
+            <solution tag="time-limit-exceeded-or-accepted">
+                <source path="solutions/eval.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/eval_set.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-dedup.rs" type="rust"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-dupe.rs" type="rust"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/ksoosung77-ac.cpp" type="cpp.ms2017"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl.cpp" type="cpp.ms2017"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl2.cpp" type="cpp.ms2017"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl3.cpp" type="cpp.ms2017"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl4.cpp" type="cpp.ms2017"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-wa.cpp" type="cpp.ms2017"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-wa2.cpp" type="cpp.ms2017"/>
+            </solution>
+            <solution tag="main">
+                <source path="solutions/solution.py" type="python.pypy3-64"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+</problem>

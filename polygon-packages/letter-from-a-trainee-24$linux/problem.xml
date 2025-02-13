@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="24" short-name="letter-from-a-trainee" url="https://polygon.codeforces.com/p2UTGZd/rootachieve/letter-from-a-trainee">
+    <names>
+        <name language="korean" value="훈련병의 편지"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/korean/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/.html/korean/problem.html" type="text/html"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>1000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>52</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test description="정환은 3개의 편지지 모두에 정확하게 이름이 등장한다.&#13;&#10;&#13;&#10;윤수는 1번 또는 3번 편지지가 누락되면 이름이 정확하게 등장하지만 2번 편지지 누락시 미등장한다.&#13;&#10;&#13;&#10;민규는 1편 편지지 누락시 2,3번 편지지에 분할되어 등장하고,2번 또는 3번 편지지 누락시 1번에 정확하게 등장한다. &#13;&#10;&#13;&#10;영도는 3번 편지지가 누락되면 1,2번 편지지에 분할되어 등장하지만, 1번 또는 2번 편지지 누락시 미등장한다.&#13;&#10;&#13;&#10;그렇기에 정환, 민규에게 고마움이 전달된다" method="manual" sample="true"/>
+                <test cmd="main_generator 300 9 300" method="generated"/>
+                <test cmd="main_generator 300 19 300" method="generated"/>
+                <test cmd="main_generator 300 29 300" method="generated"/>
+                <test cmd="main_generator 300 39 300" method="generated"/>
+                <test cmd="main_generator 300 49 300" method="generated"/>
+                <test cmd="main_generator 300 59 300" method="generated"/>
+                <test cmd="main_generator 300 69 300" method="generated"/>
+                <test cmd="main_generator 300 79 300" method="generated"/>
+                <test cmd="main_generator 300 89 300" method="generated"/>
+                <test cmd="main_generator 300 99 300" method="generated"/>
+                <test cmd="main_generator 300 109 300" method="generated"/>
+                <test cmd="main_generator 300 119 300" method="generated"/>
+                <test cmd="main_generator 300 129 300" method="generated"/>
+                <test cmd="main_generator 300 139 300" method="generated"/>
+                <test cmd="main_generator 300 149 300" method="generated"/>
+                <test cmd="main_generator 300 159 300" method="generated"/>
+                <test cmd="main_generator 300 169 300" method="generated"/>
+                <test cmd="main_generator 300 179 300" method="generated"/>
+                <test cmd="main_generator 300 189 300" method="generated"/>
+                <test cmd="main_generator 300 199 300" method="generated"/>
+                <test cmd="main_generator 300 209 300" method="generated"/>
+                <test cmd="main_generator 300 219 300" method="generated"/>
+                <test cmd="main_generator 300 229 300" method="generated"/>
+                <test cmd="main_generator 300 239 300" method="generated"/>
+                <test cmd="main_generator 300 249 300" method="generated"/>
+                <test cmd="main_generator 300 259 300" method="generated"/>
+                <test cmd="main_generator 300 269 300" method="generated"/>
+                <test cmd="main_generator 300 279 300" method="generated"/>
+                <test cmd="main_generator 300 289 300" method="generated"/>
+                <test cmd="main_generator 300 299 300" method="generated"/>
+                <test cmd="name_letter_generator 300 199 300" method="generated"/>
+                <test cmd="name_letter_generator 300 209 300" method="generated"/>
+                <test cmd="name_letter_generator 300 219 300" method="generated"/>
+                <test cmd="name_letter_generator 300 229 300" method="generated"/>
+                <test cmd="name_letter_generator 300 239 300" method="generated"/>
+                <test cmd="name_letter_generator 300 249 300" method="generated"/>
+                <test cmd="name_letter_generator 300 259 300" method="generated"/>
+                <test cmd="name_letter_generator 300 269 300" method="generated"/>
+                <test cmd="name_letter_generator 300 279 300" method="generated"/>
+                <test cmd="name_letter_generator 300 289 300" method="generated"/>
+                <test cmd="name_letter_generator 300 299 300" method="generated"/>
+                <test cmd="one_letter_generator 300 299 300" method="generated"/>
+                <test cmd="two_letter_generator 300 150 300 10" method="generated"/>
+                <test cmd="two_letter_generator 300 150 300 50" method="generated"/>
+                <test cmd="two_letter_generator 300 150 300 100" method="generated"/>
+                <test cmd="two_letter_generator 300 150 300 200" method="generated"/>
+                <test cmd="two_letter_generator 300 150 300 300" method="generated"/>
+                <test method="manual"/>
+                <test description="299a + 1b" method="manual"/>
+                <test cmd="long-match -N 300 -M 1 -L 300 -K 300 -Q 300" method="generated"/>
+                <test cmd="shift -N 300 -M 1 -L 300 -K 299" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+            <file path="files/tutorial.tex"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/ab.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/long-match.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/main_generator.cpp" type="cpp.g++17"/>
+            </executable>
+            <executable>
+                <source path="files/name_letter_generator.cpp" type="cpp.g++17"/>
+            </executable>
+            <executable>
+                <source path="files/one_letter_generator.cpp" type="cpp.g++17"/>
+            </executable>
+            <executable>
+                <source path="files/shift.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/two_letter_generator.cpp" type="cpp.g++17"/>
+            </executable>
+            <executable>
+                <source path="files/validator.cpp" type="cpp.g++17"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::lcmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/validator.cpp" type="cpp.g++17"/>
+                <testset>
+                    <test-count>0</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests/>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-bs-tle.rs" type="rust"/>
+            </solution>
+            <solution tag="time-limit-exceeded-or-accepted">
+                <source path="solutions/kiwiyou-contains.rs" type="rust"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/kiwiyou-hashset-linear.rs" type="rust"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-hashset-tle.rs" type="rust"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/kiwiyou-opt.rs" type="rust"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-tle.rs" type="rust"/>
+            </solution>
+            <solution tag="time-limit-exceeded-or-accepted">
+                <source path="solutions/kiwiyou-z.rs" type="rust"/>
+            </solution>
+            <solution tag="main">
+                <source path="solutions/main_solution.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/mz_slow.cpp" type="cpp.g++17"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>2</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list>
+            <stress index="2" path="stresses/002"/>
+            <stress index="1" path="stresses/001"/>
+        </list>
+    </stresses>
+</problem>

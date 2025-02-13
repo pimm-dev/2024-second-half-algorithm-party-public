@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="16" short-name="its-hot" url="https://polygon.codeforces.com/p5fMOwS/kimchijeon/its-hot">
+    <names>
+        <name language="korean" value="더워!"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/korean/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/.html/korean/problem.html" type="text/html"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>1000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>30</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test method="manual" sample="true"/>
+                <test cmd="gen_custom -N=10 -M=10 -K=10 -C=20 -CntW=10 -CntH=10 1" method="generated"/>
+                <test cmd="gen_custom -N=10 -M=10 -K=10 -C=20 -CntW=10 -CntH=10 2" method="generated"/>
+                <test cmd="gen_custom -N=10 -M=10 -K=10 -C=20 -CntW=10 -CntH=10 3" method="generated"/>
+                <test cmd="gen_custom -N=10 -M=10 -K=10 -C=20 -CntW=10 -CntH=10 4" method="generated"/>
+                <test cmd="gen_custom -N=10 -M=10 -K=10 -C=20 -CntW=10 -CntH=10 5" method="generated"/>
+                <test cmd="gen_custom -N=100 -M=100 -K=2 -C=3 -CntW=100 -CntH=100 1" method="generated"/>
+                <test cmd="gen_custom -N=100 -M=100 -K=2 -C=3 -CntW=100 -CntH=100 2" method="generated"/>
+                <test cmd="gen_custom -N=100 -M=100 -K=2 -C=3 -CntW=100 -CntH=100 3" method="generated"/>
+                <test cmd="gen_rand -nearN=30 -nearM=70 -K=2 -C=3 -CntW=200 -CntH=50" method="generated"/>
+                <test cmd="gen_rand -nearN=70 -nearM=30 -K=2 -C=3 -CntW=200 -CntH=50" method="generated"/>
+                <test cmd="gen_custom -N=100 -M=100 -K=1 -C=3 -CntW=1000 -CntH=100" method="generated"/>
+                <test cmd="gen_ml1 -N=100 -M=100 -Option=0" method="generated"/>
+                <test cmd="gen_ml1 -N=100 -M=100 -Option=1" method="generated"/>
+                <test cmd="gen_snake -IsPossible=0" method="generated"/>
+                <test cmd="gen_snake -IsPossible=1" method="generated"/>
+                <test cmd="gen_custom -N=2 -M=100 -K=10 -C=10 -CntW=30 -CntH=20" method="generated"/>
+                <test cmd="gen_custom -N=100 -M=2 -K=10 -C=10 -CntW=30 -CntH=20" method="generated"/>
+                <test cmd="gen_custom -N=2 -M=2 -K=50 -C=50 -CntW=1 -CntH=1" method="generated"/>
+                <test cmd="gen_custom -N=10 -M=10 -K=100 -C=10 -CntW=15 -CntH=20" method="generated"/>
+                <test cmd="gen_custom -N=10 -M=10 -K=10 -C=100 -CntW=15 -CntH=20" method="generated"/>
+                <test cmd="circular -N 100 -M 100 -K 1 -C 1" method="generated"/>
+                <test cmd="circular -N 100 -M 100 -K 1 -C 2" method="generated"/>
+                <test cmd="circular -N 100 -M 100 -K 1 -C 3" method="generated"/>
+                <test cmd="circular -N 100 -M 100 -K 1 -C 4" method="generated"/>
+                <test cmd="circular -N 100 -M 100 -K 1 -C 5" method="generated"/>
+                <test cmd="circular -N 100 -M 100 -K 1 -C 99" method="generated"/>
+                <test cmd="circular -N 100 -M 100 -K 2 -C 5" method="generated"/>
+                <test cmd="circular -N 100 -M 100 -K 4 -C 9" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/circular.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+            </executable>
+            <executable>
+                <source path="files/gen_custom.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_ml1.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_ml1_kc.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+            </executable>
+            <executable>
+                <source path="files/gen_ml2.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_rand.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_snake.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/validator.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::lcmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/validator.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+                <testset>
+                    <test-count>3</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests>
+                        <test verdict="valid"/>
+                        <test verdict="invalid"/>
+                        <test verdict="invalid"/>
+                    </tests>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="main">
+                <source path="solutions/jh01533-ac.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/kimchijeon_ac.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/kimchijeon_wa.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/kiwiyou-ac.rs" type="rust"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/kiwiyou-test.rs" type="rust"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/ksoosung77-ac.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded-or-memory-limit-exceeded">
+                <source path="solutions/ksoosung77-tl.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-wa.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-wa2.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+</problem>

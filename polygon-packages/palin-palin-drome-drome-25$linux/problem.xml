@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="25" short-name="palin-palin-drome-drome" url="https://polygon.codeforces.com/p81WnQX/sjmjys954646/palin-palin-drome-drome">
+    <names>
+        <name language="korean" value="더블팰린드롬"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/korean/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/.html/korean/problem.html" type="text/html"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>1000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>14</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test method="manual"/>
+                <test cmd="generator 10000 1000 1" method="generated"/>
+                <test cmd="generator 10000 1000 2" method="generated"/>
+                <test cmd="generator 10000 1000 3" method="generated"/>
+                <test cmd="generator 10000 1000 4" method="generated"/>
+                <test cmd="generator 10000 1000 5" method="generated"/>
+                <test method="manual"/>
+                <test cmd="generator 10000 1000 6" method="generated"/>
+                <test cmd="generator 10000 1000 7" method="generated"/>
+                <test cmd="generator 10000 1000 8" method="generated"/>
+                <test cmd="generator 10000 1000 9" method="generated"/>
+                <test cmd="generator 10000 1000 10" method="generated"/>
+                <test cmd="max -N 10000 -L 1000" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+            <file path="files/tutorial.tex"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/generator.cpp" type="cpp.g++17"/>
+            </executable>
+            <executable>
+                <source path="files/long_generator.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/max.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/validator.cpp" type="cpp.g++17"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::lcmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/validator.cpp" type="cpp.g++17"/>
+                <testset>
+                    <test-count>0</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests/>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="accepted">
+                <source path="solutions/jh01533-ac.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/kiwiyou-ac.rs" type="rust"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-make-py.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-make.rs" type="rust"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/ksoosung77-ac.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl2.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl3.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl4.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl5.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded-or-accepted">
+                <source path="solutions/ksoosung77-tl_or_ac.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-wa.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="main">
+                <source path="solutions/main_solution.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/mu_sol_n2.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/shapelayer-ac.cs" type="csharp.mono"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+    <tags>
+        <tag value="combinatorics"/>
+        <tag value="string"/>
+    </tags>
+</problem>

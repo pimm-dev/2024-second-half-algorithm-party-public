@@ -1,0 +1,37 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META content="no-cache" http-equiv="pragma">
+    <META content="-1" http-equiv="expires">
+    <META content="text/html;charset=UTF-8" http-equiv="content-type">
+    <LINK href="problem-statement.css" rel="stylesheet" type="text/css">
+    <TITLE>피라미드 게임</TITLE>
+    <SCRIPT type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+        });
+        </SCRIPT>
+        <SCRIPT async="" src="https://polygon.codeforces.com/lib/MathJax/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+    </SCRIPT>
+</HEAD><BODY>
+    <DIV class="problem-statement"><DIV class="header"><DIV class="title">피라미드 게임</DIV><DIV class="time-limit"><DIV class="property-title">time limit per test</DIV>1 second</DIV><DIV class="memory-limit"><DIV class="property-title">memory limit per test</DIV>1024 megabytes</DIV><DIV class="input-file input-standard"><DIV class="property-title">input</DIV>standard input</DIV><DIV class="output-file output-standard"><DIV class="property-title">output</DIV>standard output</DIV></DIV><DIV class="legend"><P><SPAN class="tex-font-style-bf">[BOJ 스택에 있는 지문이 최신 버전입니다. 지문은 BOJ 스택에서 확인해주세요]</SPAN></P><P>정환은 '피라미드'라는 게임판을 만들었다. 크기가 $$$N$$$인 피라미드는 $$$N$$$층으로 이루어져 있으며 $$$i$$$층은 $$$N-i+1$$$칸으로 나뉘어 있는 삼각형 모양의 게임판이다. 피라미드 $$$i$$$층의 $$$j$$$번째 칸을 $$$A_{i,j}$$$라 하고, 가장 꼭대기에 있는 칸 $$$A_{N,1}$$$을 피라미드의 탑, 피라미드 안에서 찾을 수 있는 크기가 작거나 같은 피라미드를 부분피라미드라고 정의했다.</P><P>정환은 크기가 $$$N$$$인 피라미드의 각 칸에 음이 아닌 정수를 적어두고 다음과 같은 2인용 게임을 기획했다.</P><P>&mdash; 먼저 양의 정수 $$$K$$$를 정하고 게임을 시작한다. 두 플레이어는 서로 턴을 번갈아 가면서 게임을 진행하고, 자신의 턴에 행동을 할 수 없는 플레이어가 패배한다.</P><P>&mdash; 각 턴에는 정확히 한 번, 피라미드에서 크기가 $$$K$$$인 부분피라미드와 임의의 양의 정수 $$$P$$$를 고르고 그 부분피라미드의 모든 칸에 $$$P$$$를 XOR하고 턴을 넘긴다. <SPAN class="tex-font-style-bf">단 부분피라미드의 탑에 적힌 수가 감소하는 행동에 한해서만 할 수 있다.</SPAN></P><P>게임은 완성했지만 게임에 대한 오랜 연구로 피라미드의 일부 칸이 노후화되어 쓰지 못하게 되었다. 아쉬운대로 노후화된 칸들은 사용하지 않기로 했다. 즉, 노후화된 칸을 탑으로 하는 부분피라미드를 고를 수 없고 노후화된 칸에는 $$$P$$$를 XOR하지 않는다.</P><P>$$$T$$$개의 테스트케이스에 대해 크기가 $$$N$$$인 피라미드와 $$$K$$$가 주어졌을 때 선공과 후공 중 누가 필승법을 가지고 있는 지 구해보자.</P></DIV><P></P><P></P><DIV class="input-specification"><DIV class="section-title">Input</DIV><P></P><P>첫 번째 줄에 테스트케이스의 수 $$$T$$$가 주어진다.</P><P>각 테스트케이스의 첫 번째 줄에 피라미드의 크기 $$$N$$$과 양의 정수 $$$K$$$가 공백으로 구분되어 주어진다.</P><P>그 다음 $$$N$$$줄에 거쳐서 피라미드의 칸에 적힌 수가 공백으로 구분되어 주어진다. $$$N$$$줄 중 $$$m$$$번째 줄에 $$$N-m+1$$$층에 속하는 칸에 적힌 수가 왼쪽부터 순서대로 주어진다. 즉, 각 줄에는 $$$A_{N-m+1,1},A_{N-m+1,2}, \dots ,A_{N-m+1,m}$$$ 이 주어진다. <SPAN class="tex-font-style-bf">노후화된 칸은 $$$-1$$$로 주어진다.</SPAN></P><P>제한</P><P>$$$1 \le T \le 65\,536$$$</P><P>$$$1 \le K \le N \le 1\,000$$$</P><P>$$$-1 \le A_{i,j} \le 10^9$$$ $$$(1 \le i \le N, 1 \le j \le N-i+1)$$$ </P><P>입력으로 주어지는 $$$N^2$$$의 합은 $$$1\,000\,000$$$을 넘지 않는다. </P></DIV><P></P><P></P><DIV class="output-specification"><DIV class="section-title">Output</DIV><P></P><P>각 테스트케이스마다 선공이 필승법을 가지고 있다면 <SPAN class="tex-font-style-tt">First</SPAN>, 후공이 필승법을 가지고 있다면 <SPAN class="tex-font-style-tt">Second</SPAN>을 출력한다. 만약 양쪽 모두 필승법을 가지고 있지 않다면 <SPAN class="tex-font-style-tt">Draw</SPAN>을 출력한다.</P></DIV><P></P><P></P><DIV class="sample-tests"><DIV class="section-title">Example</DIV><P></P><P></P><DIV class="sample-test"><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="3
+5 2
+10
+8 2
+1 -1 9
+-1 7 2 4
+1 2 3 4 5
+3 2
+1
+2 2
+3 3 3
+3 2
+-1
+-1 -1
+-1 1 -1
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">3</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">5 2</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">10</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">8 2</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">1 -1 9</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">-1 7 2 4</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">1 2 3 4 5</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">3 2</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">1</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">2 2</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">3 3 3</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">3 2</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">-1</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">-1 -1</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">-1 1 -1</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+Second
+First
+Second
+</PRE></DIV></DIV></DIV></DIV><P></P><P>  </P>
+
+</BODY></HTML>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="16" short-name="wannabe-a-tree" url="https://polygon.codeforces.com/p2TIvRq/invrtd.h/wannabe-a-tree">
+    <names>
+        <name language="korean" value="나무가 되고 싶다"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/korean/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/.html/korean/problem.html" type="text/html"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>1000</time-limit>
+            <memory-limit>1073741824</memory-limit>
+            <test-count>36</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test method="manual" sample="true"/>
+                <test method="manual" sample="true"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test method="manual"/>
+                <test cmd="rnd -n=500000 -ubd=1500000 0" method="generated"/>
+                <test cmd="rnd -n=500000 -ubd=1152921504606846975 0" method="generated"/>
+                <test cmd="rnd -n=500000 -ubd=1500000 1" method="generated"/>
+                <test cmd="rnd -n=500000 -ubd=1152921504606846975 1" method="generated"/>
+                <test cmd="rnd -n=500000 -ubd=1500000 2" method="generated"/>
+                <test cmd="rnd -n=500000 -ubd=1152921504606846975 2" method="generated"/>
+                <test cmd="rnd -n=500000 -ubd=1500000 3" method="generated"/>
+                <test cmd="rnd -n=500000 -ubd=1152921504606846975 3" method="generated"/>
+                <test cmd="static -idx=0" method="generated"/>
+                <test cmd="static -idx=1" method="generated"/>
+                <test cmd="static -idx=2" method="generated"/>
+                <test cmd="static -idx=3" method="generated"/>
+                <test cmd="static -idx=4" method="generated"/>
+                <test cmd="layer -N 500000 -A 199999" method="generated"/>
+                <test cmd="layer -N 500000 -A 200001" method="generated"/>
+                <test cmd="layer -N 500000 -A 1152921504606346976" method="generated"/>
+                <test cmd="layer -N 500000 -A 1" method="generated"/>
+                <test cmd="push -n=500000 -ubd=1152921504606846975 0" method="generated"/>
+                <test cmd="push -n=500000 -ubd=1152921504606846975 1" method="generated"/>
+                <test cmd="push -n=500000 -ubd=1152921504606846975 2" method="generated"/>
+                <test cmd="push -n=500000 -ubd=1152921504606846975 3" method="generated"/>
+                <test cmd="push -n=500000 -ubd=1152921504606846975 4" method="generated"/>
+                <test cmd="mult -k 11" method="generated"/>
+                <test cmd="mult -k 5" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/layer.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/mult.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/push.cpp" type="cpp.g++17"/>
+            </executable>
+            <executable>
+                <source path="files/rnd.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/static.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/vd.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::ncmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/vd.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+                <testset>
+                    <test-count>2</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests>
+                        <test verdict="valid"/>
+                        <test verdict="invalid"/>
+                    </tests>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="accepted">
+                <source path="solutions/invrtd-sol4.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/invrtd-wa-overflow.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/invrtd-wa.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/invrtd-wa2-overflow.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/invrtd-wa3.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/jh-mle.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="main">
+                <source path="solutions/jh01533-ac.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/kiwiyou-hs.rs" type="rust"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/kiwiyou-linear.rs" type="rust"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/kiwiyou-no-set.rs" type="rust"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/ksoosung77-ac.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-test.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/ksoosung77-tl.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-wa.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-wa2.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/ksoosung77-wa3.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/mz_linear_ac.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/mz_linear_wa.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/mz_sol.cpp" type="cpp.g++17"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+    <tags>
+        <tag value="hash-table"/>
+        <tag value="trees"/>
+        <tag value="treeset"/>
+    </tags>
+</problem>

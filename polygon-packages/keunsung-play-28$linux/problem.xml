@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<problem revision="28" short-name="keunsung-play" url="https://polygon.codeforces.com/p653ksj/sjmjys954646/keunsung-play">
+    <names>
+        <name language="korean" value="근성아 일하자!"/>
+    </names>
+    <statements>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/korean/problem.tex" type="application/x-tex"/>
+        <statement charset="UTF-8" language="korean" mathjax="true" path="statements/.html/korean/problem.html" type="text/html"/>
+    </statements>
+    <judging cpu-name="Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz" cpu-speed="3600" input-file="" output-file="" run-count="1">
+        <testset name="tests">
+            <time-limit>1000</time-limit>
+            <memory-limit>268435456</memory-limit>
+            <test-count>34</test-count>
+            <input-path-pattern>tests/%02d</input-path-pattern>
+            <answer-path-pattern>tests/%02d.a</answer-path-pattern>
+            <tests>
+                <test method="manual" sample="true"/>
+                <test cmd="gen_rand -maxN=200000 1" method="generated"/>
+                <test cmd="gen_rand -maxN=200000 2" method="generated"/>
+                <test cmd="gen_rand -maxN=200000 3" method="generated"/>
+                <test cmd="gen_rand -maxN=200000 4" method="generated"/>
+                <test cmd="gen_rand -maxN=200000 5" method="generated"/>
+                <test cmd="gen_rand -maxN=20 1" method="generated"/>
+                <test cmd="gen_rand -maxN=20 2" method="generated"/>
+                <test cmd="gen_rand -maxN=20 3" method="generated"/>
+                <test cmd="gen_rand -maxN=20 4" method="generated"/>
+                <test cmd="gen_rand -maxN=20 5" method="generated"/>
+                <test description="현재 위치에서 가장 가까운 좌표가 두 개 이상일 때 더 큰 좌표로 이동하도록 하는 경우 저격" method="manual"/>
+                <test cmd="gen_all1query -maxN=200000" method="generated"/>
+                <test cmd="gen_max_vector" method="generated"/>
+                <test cmd="gen_max_deque" method="generated"/>
+                <test cmd="gen_n1" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 1" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 2" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 3" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 4" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 5" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 6" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 7" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 8" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 9" method="generated"/>
+                <test cmd="gen_fix_n -N=200000 10" method="generated"/>
+                <test cmd="gen_max" method="generated"/>
+                <test cmd="max-sort -K 49999 -T 4" method="generated"/>
+                <test cmd="max-sort -K 99999 -T 2" method="generated"/>
+                <test cmd="max-sort -K 199999 -T 1" method="generated"/>
+                <test cmd="big-input -K 999 -T 200" method="generated"/>
+                <test cmd="big-input -K 49999 -T 4" method="generated"/>
+                <test cmd="big-input -K 99999 -T 2" method="generated"/>
+                <test cmd="big-input -K 199999 -T 1" method="generated"/>
+            </tests>
+        </testset>
+    </judging>
+    <files>
+        <resources>
+            <file path="files/olymp.sty"/>
+            <file path="files/problem.tex"/>
+            <file path="files/statements.ftl"/>
+            <file path="files/testlib.h" type="h.g++"/>
+        </resources>
+        <executables>
+            <executable>
+                <source path="files/big-input.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+            </executable>
+            <executable>
+                <source path="files/gen_all1query.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_fix_n.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_max.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_max_deque.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_max_vector.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_n1.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/gen_rand.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+            <executable>
+                <source path="files/max-sort.cpp" type="cpp.gcc14-64-msys2-g++23"/>
+            </executable>
+            <executable>
+                <source path="files/validator.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </executable>
+        </executables>
+    </files>
+    <assets>
+        <checker name="std::lcmp.cpp" type="testlib">
+            <source path="files/check.cpp" type="cpp.g++17"/>
+            <copy path="check.cpp"/>
+            <testset>
+                <test-count>0</test-count>
+                <input-path-pattern>files/tests/checker-tests/%02d</input-path-pattern>
+                <output-path-pattern>files/tests/checker-tests/%02d.o</output-path-pattern>
+                <answer-path-pattern>files/tests/checker-tests/%02d.a</answer-path-pattern>
+                <tests/>
+            </testset>
+        </checker>
+        <validators>
+            <validator>
+                <source path="files/validator.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+                <testset>
+                    <test-count>0</test-count>
+                    <input-path-pattern>files/tests/validator-tests/%02d</input-path-pattern>
+                    <tests/>
+                </testset>
+            </validator>
+        </validators>
+        <solutions>
+            <solution tag="accepted">
+                <source path="solutions/inv-ac.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/inv-wa1-ineq-mistake.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="wrong-answer">
+                <source path="solutions/inv-wa2-wrong-assumption.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/jh01533-ac.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="main">
+                <source path="solutions/kimchijeon_sol.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-tle-d-py.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-tle-d.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-tle-py.py" type="python.pypy3-64"/>
+            </solution>
+            <solution tag="time-limit-exceeded">
+                <source path="solutions/kiwiyou-tle.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/ksoosung77-ac.cpp" type="cpp.gcc13-64-winlibs-g++20"/>
+            </solution>
+            <solution tag="accepted">
+                <source path="solutions/mu_sol_nlogn.cpp" type="cpp.g++17"/>
+            </solution>
+            <solution tag="time-limit-exceeded-or-accepted">
+                <source path="solutions/shapelayer-tl-ac.cs" type="csharp.mono"/>
+            </solution>
+            <solution tag="rejected">
+                <source path="solutions/shapelayer-tl-wa-rev-thenby.cs" type="csharp.mono"/>
+            </solution>
+        </solutions>
+    </assets>
+    <properties>
+        <property name="tests-wellformed" value="true"/>
+    </properties>
+    <stresses>
+        <stress-count>0</stress-count>
+        <stress-path-pattern>stresses/%03d</stress-path-pattern>
+        <list/>
+    </stresses>
+    <tags>
+        <tag value="simple math"/>
+    </tags>
+</problem>

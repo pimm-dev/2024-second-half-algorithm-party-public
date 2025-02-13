@@ -1,0 +1,33 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META content="no-cache" http-equiv="pragma">
+    <META content="-1" http-equiv="expires">
+    <META content="text/html;charset=UTF-8" http-equiv="content-type">
+    <LINK href="problem-statement.css" rel="stylesheet" type="text/css">
+    <TITLE>더워!</TITLE>
+    <SCRIPT type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+        });
+        </SCRIPT>
+        <SCRIPT async="" src="https://polygon.codeforces.com/lib/MathJax/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+    </SCRIPT>
+</HEAD><BODY>
+    <DIV class="problem-statement"><DIV class="header"><DIV class="title">더워!</DIV><DIV class="time-limit"><DIV class="property-title">time limit per test</DIV>1 second</DIV><DIV class="memory-limit"><DIV class="property-title">memory limit per test</DIV>256 megabytes</DIV><DIV class="input-file input-standard"><DIV class="property-title">input</DIV>standard input</DIV><DIV class="output-file output-standard"><DIV class="property-title">output</DIV>standard output</DIV></DIV><DIV class="legend"><P>한 여름의 날씨는 더워도 너무 덥다. 외출은 커녕 집에서도 에어컨을 끄지 못하지만, 그럼에도 민규는 바쁜 약속을 위해 약속 장소로 발걸음을 옮겨야 한다. </P><P>밖은 $$$N$$$행 $$$M$$$열의 격자로 이루어져 있다. 격자의 각 칸은 집, 약속 장소, 건물, 벽, 길 중 하나로 이루어져 있다.</P><P>밖은 너무 더워 길 위에 있을 때는 지속적으로 불쾌함이 증가한다. 그러나 중간 중간 이동 경로에 있는 건물은 매우 시원하여, 건물을 지나가거나 건물 내에서 쉬는 동안에는 불쾌함이 감소한다.</P><P>민규의 불쾌함은 $$$0$$$으로 시작하며, $$$100$$$이 되면 견딜 수 없어 쓰러지고 만다.</P><P>민규는 매 시간 다음과 같은 순서로 행동한다. </P><P></P><OL> <LI> 격자판 내에서 벽이 아닌 인접한 칸으로 이동하거나, 이동하지 않고 가만히 있는다.<P></P><P> </P></LI><LI> 현재 있는 칸에 따라서 불쾌함이 증가하거나 감소한다. <UL> <LI> 현재 있는 칸이 건물이라면 불쾌함이 $$$K$$$만큼 감소한다. 불쾌함은 $$$0$$$ 미만으로 내려가지 않는다. </LI><LI> 현재 있는 칸이 건물이 아니라면 불쾌함이 $$$C$$$만큼 증가한다. 불쾌함이 $$$100$$$ 이상이 되면 쓰러지며 더 이상 행동하지 못한다. </LI></UL><P></P><P> </P></LI><LI> 약속 장소에 도달하면 행동을 멈춘다. </LI></OL><P></P><P>민규가 약속 장소에 쓰러지지 않고 도달할 수 있도록, 민규의 이동 경로를 계산하는 프로그램을 작성해주자.</P></DIV><P></P><P></P><DIV class="input-specification"><DIV class="section-title">Input</DIV><P></P><P>첫 번째 줄에 격자의 크기를 나타내는 정수 $$$N$$$, $$$M$$$이 공백으로 구분되어 주어진다. ($$$2 \leq N, M \leq 100$$$) 두 번째 줄에 건물에서 감소하는 불쾌함, 길에서 증가하는 불쾌함을 나타내는 정수 $$$K$$$, $$$C$$$가 공백으로 구분되어 주어진다. ($$$1 \leq K, C \leq 100$$$) 세 번째 줄부터 $$$N+2$$$번째 줄까지 거리의 상태를 나타내는 길이 $$$M$$$의 문자열이 주어진다. $$$i+2$$$번째 줄의 $$$j$$$번째 문자는 $$$i$$$행 $$$j$$$열의 상태를 나타낸다. 만약 문자가 <SPAN class="tex-font-style-tt">S</SPAN>라면 민규의 집 위치, <SPAN class="tex-font-style-tt">E</SPAN>라면 약속 장소, <SPAN class="tex-font-style-tt">H</SPAN>라면 건물, <SPAN class="tex-font-style-tt">#</SPAN>이라면 벽, <SPAN class="tex-font-style-tt">.</SPAN>이라면 길을 의미한다. <SPAN class="tex-font-style-tt">S</SPAN>와 <SPAN class="tex-font-style-tt">E</SPAN>는 하나만 주어진다.</P></DIV><P></P><P></P><DIV class="output-specification"><DIV class="section-title">Output</DIV><P></P><P>민규가 약속 장소에 쓰러지지 않고 도달할 수 있는 최소 시간을 출력한다. 만약 그런 방법이 없다면 <SPAN class="tex-font-style-tt">-1</SPAN>을 출력한다.</P></DIV><P></P><P></P><DIV class="sample-tests"><DIV class="section-title">Examples</DIV><P></P><P></P><DIV class="sample-test"><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="3 4
+10 25
+S...
+#.H.
+E...
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">3 4</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">10 25</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">S...</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">#.H.</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">E...</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+8
+</PRE></DIV><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="3 4
+10 25
+S...
+#..H
+E...
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">3 4</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">10 25</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">S...</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">#..H</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">E...</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+-1
+</PRE></DIV></DIV></DIV></DIV><P></P><P>  </P>
+
+</BODY></HTML>

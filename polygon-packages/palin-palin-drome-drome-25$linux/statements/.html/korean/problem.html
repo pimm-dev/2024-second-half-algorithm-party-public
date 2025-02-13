@@ -1,0 +1,23 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META content="no-cache" http-equiv="pragma">
+    <META content="-1" http-equiv="expires">
+    <META content="text/html;charset=UTF-8" http-equiv="content-type">
+    <LINK href="problem-statement.css" rel="stylesheet" type="text/css">
+    <TITLE>더블팰린드롬</TITLE>
+    <SCRIPT type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+        });
+        </SCRIPT>
+        <SCRIPT async="" src="https://polygon.codeforces.com/lib/MathJax/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+    </SCRIPT>
+</HEAD><BODY>
+    <DIV class="problem-statement"><DIV class="header"><DIV class="title">더블팰린드롬</DIV><DIV class="time-limit"><DIV class="property-title">time limit per test</DIV>1 second</DIV><DIV class="memory-limit"><DIV class="property-title">memory limit per test</DIV>256 megabytes</DIV><DIV class="input-file input-standard"><DIV class="property-title">input</DIV>standard input</DIV><DIV class="output-file output-standard"><DIV class="property-title">output</DIV>standard output</DIV></DIV><DIV class="legend"><P>종현은 알고리즘 과제로 팰린드롬에 대해서 공부하고 있다. 팰린드롬(palindrome)이란 앞에서부터 읽으나 뒤에서부터 읽으나 같은 문자열을 말한다. 예를들어 'abba', 'level' 등은 팰린드롬이며 'abab', 'boj' 등은 팰린드롬이 아니다. </P><P></P><CENTER> <IMG class="tex-graphics" src="6a386dbc526fb805ef5ede879d8261b6f6b33752.png"> </CENTER><P></P><P>종현은 팰린드롬을 보다가 새로운 현상을 발견하게 되었다. 먼저, <SPAN class="tex-font-style-bf">길이가 짝수</SPAN>인 문자열 $$$X$$$, $$$Y$$$를 고른다. 그리고 $$$X$$$를 같은 길이의 두 부분으로 나누어 문자열 $$$X_1$$$, $$$X_2$$$를 얻는다. 다음으로 종현은 $$$X_1$$$, $$$Y$$$와 $$$X_2$$$를 순서대로 이어 붙여 새로운 문자열 $$$Z$$$를 얻는다. 이렇게 얻은 $$$Z$$$가 팰린드롬이라면 종현은 $$$X$$$와 $$$Y$$$가 더블팰린드롬 현상을 일으킨다고 부르기로 했다. 길이가 짝수인 문자열 $$$N$$$개가 주어졌을 때 서로 다른 두 개의 문자열 $$$S{i}$$$, $$$S{j}$$$를 골라서 더블팰린드롬 현상을 만들 수 있는 쌍의 개수를 구하시오. 더블팰린드롬 현상에 관계없이 문자열 $$$S{i}$$$, $$$S{j}$$$가 다를 경우 다른 경우의 수로 둔다. </P></DIV><P></P><P></P><DIV class="input-specification"><DIV class="section-title">Input</DIV><P></P><P>첫 번째 줄에 문자열의 개수 $$$N$$$이 주어진다.</P><P>두 번째 줄부터 $$$N$$$개의 줄에 걸쳐 길이가 짝수인 알파벳 소문자로만 구성된 문자열이 주어진다.</P></DIV><P></P><P></P><DIV class="output-specification"><DIV class="section-title">Output</DIV><P></P><P>더블팰린드롬 현상을 만들 수 있는 쌍의 개수를 출력한다.</P></DIV><P></P><P></P><DIV class="sample-tests"><DIV class="section-title">Example</DIV><P></P><P></P><DIV class="sample-test"><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="3
+abba
+aa
+ac
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">3</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">abba</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">aa</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">ac</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+2</PRE></DIV></DIV></DIV><P></P><P></P><DIV class="note"><DIV class="section-title">Note</DIV><P></P><P>- $$$2 \le N \le 10\,000$$$ </P><P>- 입력으로 주어지는 모든 수는 정수이다.</P><P>- 입력으로 주어지는 문자열의 길이는 $$$1\,000$$$ 이하이며 짝수이다. </P><P>- 입력으로 주어지는 문자열은 중복되지 않는다. </P><P>주어진 문자열의 집합 {abba, aa, ac}가 있을 때 더블팰린드롬 현상을 만들어 볼 수 있는 문자열은 {abaaba, abacba, aabbaa, aaca, aabbac, aaac}로 여섯 가지가 존재한다. 이 중, 더블팰린드롬에 해당하는 현상은 {abaaba, aabbaa} 로 해당 문자열을 만드는 쌍의 개수는 {abba, aa}, {aa, abba} 두 개이다.</P></DIV></DIV><P></P><P>  </P>
+
+</BODY></HTML>

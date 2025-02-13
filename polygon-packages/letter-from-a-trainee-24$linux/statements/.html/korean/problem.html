@@ -1,0 +1,34 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META content="no-cache" http-equiv="pragma">
+    <META content="-1" http-equiv="expires">
+    <META content="text/html;charset=UTF-8" http-equiv="content-type">
+    <LINK href="problem-statement.css" rel="stylesheet" type="text/css">
+    <TITLE>훈련병의 편지</TITLE>
+    <SCRIPT type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$$$','$$$']], displayMath: [['$$$$$$','$$$$$$']]}
+        });
+        </SCRIPT>
+        <SCRIPT async="" src="https://polygon.codeforces.com/lib/MathJax/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+    </SCRIPT>
+</HEAD><BODY>
+    <DIV class="problem-statement"><DIV class="header"><DIV class="title">훈련병의 편지</DIV><DIV class="time-limit"><DIV class="property-title">time limit per test</DIV>1 second</DIV><DIV class="memory-limit"><DIV class="property-title">memory limit per test</DIV>256 megabytes</DIV><DIV class="input-file input-standard"><DIV class="property-title">input</DIV>standard input</DIV><DIV class="output-file output-standard"><DIV class="property-title">output</DIV>standard output</DIV></DIV><DIV class="legend"><P>대학 졸업을 앞둔 전남대의 고학번 근성도 어느덧 훈련소에 갈 시기가 되었다.</P><P>훈련소에 입소한 첫날밤. 대학생활을 되돌아보며 너무나 많은 고마운 사람이 있다는 것을 깨닫게된 근성은 고마운 사람들의 이름이 담긴 편지를 적기로 마음 먹었다.</P><P>근성이 입소할 당시에는 훈련병이 스마트폰을 사용해 연락을 할 수 있었지만, 그 방식으로는 고마움이 담기지 않는다 생각한 근성은 열심히 손편지를 적기 시작하였다. </P><P>감성 한 스푼, 고마움 두 스푼이 담긴 편지를 다 적은 후 근성은 편지의 발송을 요청하였지만 편지담당자의 실수로 편지의 일부 몇 장이 누락되고 말았다!</P><P>편지에 고마움이 대상에게 전달 될 수 있으려면 다음 조건을 만족해야한다.</P><P></P><UL> <LI> 편지지 하나에 이름이 온전하게 있다면 **등장**하는 것이다. <UL> <LI> 1번 편지지 : '김근성' 이 내용에 들어있다. </LI><LI> 1번 편지지에 '김근성'이 있기에 김근성은 편지에 등장한다. </LI></UL> </LI><LI> 여러장의 편지지에 이름이 걸쳐 있어도 연속되게 있다면 **등장**하는 것이다. <UL> <LI> 1번 편지지 : '김' 으로 편지내용이 끝난다. </LI><LI> 2번 편지지 : '근성' 으로 편지내용이 시작한다. </LI><LI> 1번 편지지와 2번 편지지 내용이 합쳐지면 '김근성' 이기에 김근성은 편지에 등장한다. </LI></UL> </LI><LI> 만약 편지지가 누락되어서 이름이 연속되게 된다면 **등장**하는 것이다. <UL> <LI> 1번 편지지 : '김' 으로 편지내용이 끝난다. </LI><LI> 2번 편지지 : 상관없는 내용이 적혀있다. </LI><LI> 3번 편지지 : '근성' 으로 편지내용이 시작한다. </LI><LI> 이때 2번 편지지가 누락되고 1번 편지지와 3번 편지지의 내용이 합쳐지만 '김근성'이기에 김근성은 편지에 등장한다. </LI></UL> </LI><LI> N개의 편지지중 어떤 M개의 편지지가 누락되더라도 대상의 이름이 반드시 **등장**한다면 해당 대상에게는 고마움이 전달된다. </LI></UL><P></P><P>편지의 일부 몇 장이 누락되더라도 근성의 고마움이 대상에게 전달 될 수 있을지 구해보자</P></DIV><P></P><P></P><DIV class="input-specification"><DIV class="section-title">Input</DIV><P></P><P>첫 번째줄에 근성이 적은 편지의 장수 $$$N$$$이 주어진다. $$$(2 \le N \le 300)$$$</P><P>두 번째 줄에 실수로 누락된 편지의 장수 $$$M$$$이 주어진다 $$$(1 \le M \le N - 1)$$$</P><P>세 번째 줄부터 $$$N$$$개 줄에 걸쳐 편지의 내용 $$$si$$$가 주어진다. 편지의 내용은 알파벳 소문자와 '.'(온점) 으로 이루어져 있다. $$$(2 \le len(si)\le 300)$$$ </P><P>$$$N + 3$$$번째 줄에 근성이 감사를 표하고 싶어하는 사람들의 수 $$$K$$$가 주어진다 $$$(1 \le K \le 300 )$$$</P><P>$$$N + 4$$$번째 줄부터 이후 $$$K$$$개 줄에 걸쳐 감사를 표하고 싶어하는 사람들의 이름 $$$ki$$$ 이 주어진다. 사람들의 이름은 알파벳 소문자로 이루어져 있다. $$$(1 \le len(ki) \le max(len(si)) )$$$ </P></DIV><P></P><P></P><DIV class="output-specification"><DIV class="section-title">Output</DIV><P></P><P>첫 번째줄에 총 몇 명에게 근성의 고마움이 전달될 수 있는 지 출력한다. 이어서 K개 줄에 거쳐 입력으로 주어진 이름 순서대로 고마움이 전달된다면 "Yes", 아니라면 "No"를 출력한다.</P></DIV><P></P><P></P><DIV class="sample-tests"><DIV class="section-title">Example</DIV><P></P><P></P><DIV class="sample-test"><DIV class="input"><DIV class="title">Input</DIV><PRE class="content" data-content="3
+1
+su..jungwhan..mingyu..young
+do..jungwhan..yunsu..min
+gyu..jungwhan..yun
+4
+yunsu
+youngdo
+mingyu
+jungwhan
+">
+<DIV class="test-example-line test-example-line-even test-example-line-0">3</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">1</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">su..jungwhan..mingyu..young</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">do..jungwhan..yunsu..min</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">gyu..jungwhan..yun</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">4</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">yunsu</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">youngdo</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">mingyu</DIV><DIV class="test-example-line test-example-line-even test-example-line-0">jungwhan</DIV></PRE></DIV><DIV class="output"><DIV class="title">Output</DIV><PRE class="content">
+2
+No
+No
+Yes
+Yes
+</PRE></DIV></DIV></DIV><P></P><P></P><DIV class="note"><DIV class="section-title">Note</DIV><P></P><P>근성은 이 문제를 출제할 당시 진짜 훈련소에 있었다.</P></DIV></DIV><P></P><P>  </P>
+
+</BODY></HTML>
